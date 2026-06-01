@@ -1,106 +1,351 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Kisaragi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kisaragi - Cari Teman Mabar Mobile Legends</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
 body{
-font-family:Arial;
-background:#fff;
-padding:30px;
+background:#f5f7fb;
+min-height:100vh;
+padding:40px 15px;
 }
 
 .container{
-max-width:500px;
+max-width:700px;
 margin:auto;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+.header{
+padding:35px;
+border-bottom:5px solid #111827;
+}
+
+.logo{
+width:70px;
+height:70px;
+border-radius:18px;
+background:#111827;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.header h1{
+font-size:30px;
+margin-bottom:10px;
+color:#111827;
+}
+
+.header p{
+color:#6b7280;
+line-height:1.6;
+}
+
+.form-body{
+padding:30px;
+}
+
+.form-group{
+margin-bottom:22px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#111827;
+}
+
+.required{
+color:red;
 }
 
 input{
 width:100%;
-padding:12px;
-margin-top:10px;
-margin-bottom:15px;
+padding:14px;
+border:1px solid #d1d5db;
+border-radius:12px;
+font-size:15px;
+transition:.3s;
+}
+
+input:focus{
+outline:none;
+border-color:#111827;
+}
+
+.upload-box{
+border:2px dashed #d1d5db;
+padding:25px;
+border-radius:15px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+}
+
+.upload-box:hover{
+border-color:#111827;
+}
+
+.preview{
+margin-top:15px;
+display:none;
+}
+
+.preview img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:15px;
+border:3px solid #e5e7eb;
+}
+
+.notice{
+background:#f9fafb;
+padding:15px;
+border-radius:12px;
+font-size:14px;
+color:#4b5563;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.checkbox{
+display:flex;
+gap:10px;
+align-items:flex-start;
+font-size:14px;
+color:#374151;
+}
+
+.checkbox input{
+width:auto;
+margin-top:4px;
 }
 
 button{
 width:100%;
-padding:15px;
-background:black;
-color:white;
+padding:16px;
 border:none;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:600;
+border-radius:12px;
 cursor:pointer;
+margin-top:20px;
+transition:.3s;
+}
+
+button:hover{
+background:#000;
+}
+
+button:disabled{
+opacity:.6;
+cursor:not-allowed;
+}
+
+.success{
+display:none;
+text-align:center;
+padding:40px;
+}
+
+.success h2{
+margin-top:20px;
+margin-bottom:10px;
+}
+
+.success p{
+color:#6b7280;
+}
+
+.footer{
+text-align:center;
+margin-top:20px;
+font-size:13px;
+color:#9ca3af;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
+<div class="card">
+
+<div class="header">
+
+<div class="logo">K</div>
+
 <h1>Kisaragi</h1>
 
-<form id="form">
+<p>
+Temukan teman mabar Mobile Legends yang cocok denganmu.
+Data yang dikirim hanya dapat dilihat oleh admin.
+</p>
 
-<input
-type="text"
-placeholder="Nama Lengkap"
-id="nama"
-required>
+</div>
 
-<input
-type="number"
-placeholder="Usia"
-id="usia"
-required>
+<div class="form-body">
 
-<input
-type="text"
-placeholder="Domisili"
-id="domisili"
-required>
+<div id="formSection">
 
-<input
-type="text"
-placeholder="Nickname Mobile Legends"
-id="nickname"
-required>
+<div class="notice">
+Silakan isi data dengan benar. Foto wajah digunakan untuk verifikasi dan tidak akan ditampilkan ke publik.
+</div>
 
-<input
-type="text"
-placeholder="User ID Mobile Legends"
-id="userid"
-required>
+<form id="mabarForm">
 
+<div class="form-group">
+<label>Nama Lengkap <span class="required">*</span></label>
+<input type="text" id="nama" required>
+</div>
+
+<div class="form-group">
+<label>Usia <span class="required">*</span></label>
+<input type="number" min="10" max="99" id="usia" required>
+</div>
+
+<div class="form-group">
+<label>Domisili <span class="required">*</span></label>
+<input type="text" id="domisili" required>
+</div>
+
+<div class="form-group">
+<label>Nickname Mobile Legends <span class="required">*</span></label>
+<input type="text" id="nickname" required>
+</div>
+
+<div class="form-group">
+<label>User ID Mobile Legends <span class="required">*</span></label>
+<input type="text" id="userid" required>
+</div>
+
+<div class="form-group">
+
+<label>Foto Wajah <span class="required">*</span></label>
+
+<div class="upload-box">
 <input
 type="file"
 id="photo"
 accept="image/*"
 required>
+</div>
 
-<button type="submit">
-Kirim
+<div class="preview" id="preview">
+<img id="previewImage">
+</div>
+
+</div>
+
+<div class="checkbox">
+
+<input type="checkbox" id="agree" required>
+
+<label for="agree">
+Saya menyetujui pengiriman data dan foto saya untuk keperluan pencarian teman mabar melalui Kisaragi.
+</label>
+
+</div>
+
+<button id="submitBtn" type="submit">
+Kirim Data
 </button>
 
 </form>
 
-<p id="status"></p>
+</div>
+
+<div class="success" id="successSection">
+
+<h2>✅ Data Berhasil Dikirim</h2>
+
+<p>
+Terima kasih telah bergabung dengan Kisaragi.
+Data Anda telah diterima oleh admin.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Kisaragi Community
+</div>
 
 </div>
 
 <script>
 
-const WEBAPP_URL =
-"https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
+// GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
+
+const photoInput = document.getElementById("photo");
+
+photoInput.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(!file) return;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+document.getElementById("previewImage").src =
+e.target.result;
+
+document.getElementById("preview").style.display =
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
 
 document
-.getElementById("form")
+.getElementById("mabarForm")
 .addEventListener("submit", async function(e){
 
 e.preventDefault();
+
+const btn =
+document.getElementById("submitBtn");
+
+btn.disabled = true;
+btn.innerText = "Mengirim...";
 
 const file =
 document.getElementById("photo").files[0];
@@ -140,6 +385,8 @@ file.type
 
 };
 
+try{
+
 await fetch(
 WEBAPP_URL,
 {
@@ -148,12 +395,20 @@ body:JSON.stringify(payload)
 }
 );
 
-document.getElementById("status")
-.innerHTML =
-"Data berhasil dikirim.";
+document.getElementById("formSection")
+.style.display = "none";
 
-document.getElementById("form")
-.reset();
+document.getElementById("successSection")
+.style.display = "block";
+
+}catch(err){
+
+alert("Terjadi kesalahan saat mengirim data.");
+
+btn.disabled = false;
+btn.innerText = "Kirim Data";
+
+}
 
 };
 
