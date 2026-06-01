@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kisaragi</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#fff;
+padding:30px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Kisaragi</h1>
+
+<form id="form">
+
+<input
+type="text"
+placeholder="Nama Lengkap"
+id="nama"
+required>
+
+<input
+type="number"
+placeholder="Usia"
+id="usia"
+required>
+
+<input
+type="text"
+placeholder="Domisili"
+id="domisili"
+required>
+
+<input
+type="text"
+placeholder="Nickname Mobile Legends"
+id="nickname"
+required>
+
+<input
+type="text"
+placeholder="User ID Mobile Legends"
+id="userid"
+required>
+
+<input
+type="file"
+id="photo"
+accept="image/*"
+required>
+
+<button type="submit">
+Kirim
+</button>
+
+</form>
+
+<p id="status"></p>
+
+</div>
+
+<script>
+
+const WEBAPP_URL =
+"https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
+
+document
+.getElementById("form")
+.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const file =
+document.getElementById("photo").files[0];
+
+const reader = new FileReader();
+
+reader.onload = async function(){
+
+const base64 =
+reader.result.split(",")[1];
+
+const payload = {
+
+nama:
+document.getElementById("nama").value,
+
+usia:
+document.getElementById("usia").value,
+
+domisili:
+document.getElementById("domisili").value,
+
+nickname:
+document.getElementById("nickname").value,
+
+userid:
+document.getElementById("userid").value,
+
+photo:
+base64,
+
+fileName:
+file.name,
+
+mimeType:
+file.type
+
+};
+
+await fetch(
+WEBAPP_URL,
+{
+method:"POST",
+body:JSON.stringify(payload)
+}
+);
+
+document.getElementById("status")
+.innerHTML =
+"Data berhasil dikirim.";
+
+document.getElementById("form")
+.reset();
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+</script>
+
+</body>
+</html>
