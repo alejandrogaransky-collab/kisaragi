@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kisaragi - Cari Teman Mabar Mobile Legends</title>
+<title>Kisaragi | Cari Teman Mabar Mobile Legends</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,55 +18,116 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-background:#f5f7fb;
 min-height:100vh;
-padding:40px 15px;
+padding:30px 15px;
+
+background:
+linear-gradient(
+135deg,
+#ffe7f7 0%,
+#f3e8ff 45%,
+#dbeafe 100%
+);
+
+display:flex;
+justify-content:center;
+align-items:flex-start;
 }
 
 .container{
-max-width:700px;
-margin:auto;
+width:100%;
+max-width:780px;
 }
 
 .card{
-background:white;
-border-radius:20px;
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.4);
+border-radius:30px;
 overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+box-shadow:
+0 25px 60px rgba(139,92,246,.15);
 }
 
 .header{
-padding:35px;
-border-bottom:5px solid #111827;
+padding:50px 35px;
+text-align:center;
+position:relative;
 }
 
 .logo{
-width:70px;
-height:70px;
-border-radius:18px;
-background:#111827;
-color:white;
+width:100px;
+height:100px;
+margin:auto;
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#a855f7,
+#ec4899
+);
+
 display:flex;
-align-items:center;
 justify-content:center;
-font-size:30px;
-font-weight:700;
+align-items:center;
+
+font-size:42px;
+
+box-shadow:
+0 0 40px rgba(168,85,247,.35);
+
 margin-bottom:20px;
 }
 
 .header h1{
-font-size:30px;
-margin-bottom:10px;
-color:#111827;
+font-size:40px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#9333ea,
+#ec4899
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:12px;
 }
 
 .header p{
 color:#6b7280;
-line-height:1.6;
+line-height:1.8;
+font-size:15px;
+max-width:500px;
+margin:auto;
 }
 
 .form-body{
-padding:30px;
+padding:35px;
+}
+
+.notice{
+background:
+linear-gradient(
+135deg,
+#faf5ff,
+#fdf2f8
+);
+
+border-left:5px solid #c084fc;
+
+padding:18px;
+border-radius:18px;
+
+margin-bottom:25px;
+
+font-size:14px;
+line-height:1.7;
+color:#6b7280;
 }
 
 .form-group{
@@ -77,112 +138,167 @@ label{
 display:block;
 margin-bottom:8px;
 font-weight:600;
-color:#111827;
+color:#374151;
 }
 
 .required{
-color:red;
+color:#ec4899;
 }
 
-input{
+input[type=text],
+input[type=number]{
+
 width:100%;
-padding:14px;
-border:1px solid #d1d5db;
-border-radius:12px;
+padding:15px 16px;
+
+border:2px solid #e9d5ff;
+
+border-radius:16px;
+
 font-size:15px;
+
 transition:.3s;
 }
 
 input:focus{
 outline:none;
-border-color:#111827;
+
+border-color:#c084fc;
+
+box-shadow:
+0 0 0 5px rgba(192,132,252,.15);
 }
 
 .upload-box{
-border:2px dashed #d1d5db;
-padding:25px;
-border-radius:15px;
+
+border:2px dashed #c084fc;
+
+background:#faf5ff;
+
+padding:35px;
+
+border-radius:20px;
+
 text-align:center;
+
 cursor:pointer;
+
 transition:.3s;
 }
 
 .upload-box:hover{
-border-color:#111827;
+background:#f3e8ff;
+}
+
+.upload-box p{
+color:#6b7280;
+font-size:14px;
 }
 
 .preview{
-margin-top:15px;
 display:none;
+margin-top:15px;
+text-align:center;
 }
 
 .preview img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:15px;
-border:3px solid #e5e7eb;
-}
 
-.notice{
-background:#f9fafb;
-padding:15px;
-border-radius:12px;
-font-size:14px;
-color:#4b5563;
-margin-bottom:20px;
-line-height:1.6;
+width:140px;
+height:140px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:4px solid white;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.1);
 }
 
 .checkbox{
+
 display:flex;
-gap:10px;
+gap:12px;
+
 align-items:flex-start;
+
 font-size:14px;
-color:#374151;
+
+color:#4b5563;
+
+margin-top:10px;
 }
 
 .checkbox input{
 width:auto;
-margin-top:4px;
+margin-top:3px;
 }
 
 button{
+
 width:100%;
-padding:16px;
+
+padding:18px;
+
 border:none;
-background:#111827;
-color:white;
+
+border-radius:18px;
+
 font-size:16px;
-font-weight:600;
-border-radius:12px;
+font-weight:700;
+
 cursor:pointer;
-margin-top:20px;
+
+background:
+linear-gradient(
+135deg,
+#a855f7,
+#ec4899
+);
+
+color:white;
+
+margin-top:25px;
+
 transition:.3s;
+
+box-shadow:
+0 15px 35px rgba(168,85,247,.25);
 }
 
 button:hover{
-background:#000;
+
+transform:translateY(-2px);
+
+box-shadow:
+0 20px 40px rgba(168,85,247,.35);
 }
 
 button:disabled{
-opacity:.6;
+opacity:.7;
 cursor:not-allowed;
 }
 
 .success{
 display:none;
+padding:50px 30px;
 text-align:center;
-padding:40px;
+}
+
+.success-icon{
+font-size:60px;
+margin-bottom:15px;
 }
 
 .success h2{
-margin-top:20px;
+color:#9333ea;
 margin-bottom:10px;
 }
 
 .success p{
 color:#6b7280;
+line-height:1.7;
 }
 
 .footer{
@@ -190,6 +306,22 @@ text-align:center;
 margin-top:20px;
 font-size:13px;
 color:#9ca3af;
+}
+
+@media(max-width:600px){
+
+.header{
+padding:40px 25px;
+}
+
+.header h1{
+font-size:32px;
+}
+
+.form-body{
+padding:25px;
+}
+
 }
 
 </style>
@@ -203,13 +335,13 @@ color:#9ca3af;
 
 <div class="header">
 
-<div class="logo">K</div>
+<div class="logo">🌸</div>
 
 <h1>Kisaragi</h1>
 
 <p>
-Temukan teman mabar Mobile Legends yang cocok denganmu.
-Data yang dikirim hanya dapat dilihat oleh admin.
+Temukan teman mabar Mobile Legends yang cocok denganmu ✨<br>
+Komunitas yang ramah, aman, dan nyaman untuk mencari partner bermain.
 </p>
 
 </div>
@@ -219,7 +351,7 @@ Data yang dikirim hanya dapat dilihat oleh admin.
 <div id="formSection">
 
 <div class="notice">
-Silakan isi data dengan benar. Foto wajah digunakan untuk verifikasi dan tidak akan ditampilkan ke publik.
+💜 Data yang dikirim hanya dapat dilihat oleh admin. Foto wajah digunakan untuk proses verifikasi dan tidak ditampilkan kepada publik.
 </div>
 
 <form id="mabarForm">
@@ -254,11 +386,16 @@ Silakan isi data dengan benar. Foto wajah digunakan untuk verifikasi dan tidak a
 <label>Foto Wajah <span class="required">*</span></label>
 
 <div class="upload-box">
+
 <input
 type="file"
 id="photo"
 accept="image/*"
-required>
+required
+style="margin-bottom:10px;">
+
+<p>📸 Upload foto wajah terbaikmu</p>
+
 </div>
 
 <div class="preview" id="preview">
@@ -272,13 +409,13 @@ required>
 <input type="checkbox" id="agree" required>
 
 <label for="agree">
-Saya menyetujui pengiriman data dan foto saya untuk keperluan pencarian teman mabar melalui Kisaragi.
+Saya menyetujui pengiriman data dan foto untuk keperluan pencarian teman mabar melalui Kisaragi.
 </label>
 
 </div>
 
 <button id="submitBtn" type="submit">
-Kirim Data
+🚀 Kirim Data
 </button>
 
 </form>
@@ -287,10 +424,12 @@ Kirim Data
 
 <div class="success" id="successSection">
 
-<h2>✅ Data Berhasil Dikirim</h2>
+<div class="success-icon">🎉</div>
+
+<h2>Data Berhasil Dikirim</h2>
 
 <p>
-Terima kasih telah bergabung dengan Kisaragi.
+Terima kasih telah bergabung dengan Kisaragi.<br>
 Data Anda telah diterima oleh admin.
 </p>
 
@@ -308,7 +447,6 @@ Data Anda telah diterima oleh admin.
 
 <script>
 
-// GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT
 const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
 
 const photoInput = document.getElementById("photo");
@@ -323,11 +461,9 @@ const reader = new FileReader();
 
 reader.onload = function(e){
 
-document.getElementById("previewImage").src =
-e.target.result;
+document.getElementById("previewImage").src = e.target.result;
 
-document.getElementById("preview").style.display =
-"block";
+document.getElementById("preview").style.display = "block";
 
 };
 
@@ -341,11 +477,10 @@ document
 
 e.preventDefault();
 
-const btn =
-document.getElementById("submitBtn");
+const btn = document.getElementById("submitBtn");
 
 btn.disabled = true;
-btn.innerText = "Mengirim...";
+btn.innerText = "⏳ Mengirim...";
 
 const file =
 document.getElementById("photo").files[0];
@@ -396,17 +531,17 @@ body:JSON.stringify(payload)
 );
 
 document.getElementById("formSection")
-.style.display = "none";
+.style.display="none";
 
 document.getElementById("successSection")
-.style.display = "block";
+.style.display="block";
 
 }catch(err){
 
 alert("Terjadi kesalahan saat mengirim data.");
 
 btn.disabled = false;
-btn.innerText = "Kirim Data";
+btn.innerText = "🚀 Kirim Data";
 
 }
 
