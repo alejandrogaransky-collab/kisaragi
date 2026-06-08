@@ -1,712 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kisaragi | Cari Teman Mabar Mobile Legends</title>
-
+<title>Kisaragi Match | Temukan Pasangan yang Sejalan</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:linear-gradient(135deg,#ffe7f7,#f3e8ff,#dbeafe);padding:30px}
+.container{max-width:900px;margin:auto}
+.card{background:rgba(255,255,255,.85);border-radius:30px;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.header{text-align:center;margin-bottom:30px}
+.logo{font-size:60px;margin-bottom:15px}
+.profile-photo{
+    text-align:center;
+    margin-bottom:20px;
 }
 
-body{
-min-height:100vh;
-padding:30px 15px;
-
-background:
-linear-gradient(
-135deg,
-#ffe7f7 0%,
-#f3e8ff 45%,
-#dbeafe 100%
-);
-
-display:flex;
-justify-content:center;
-align-items:flex-start;
-}
-
-.container{
-width:100%;
-max-width:780px;
-}
-
-.card{
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.4);
-border-radius:30px;
-overflow:hidden;
-
-box-shadow:
-0 25px 60px rgba(139,92,246,.15);
-}
-
-.header{
-padding:50px 35px;
-text-align:center;
-position:relative;
-}
-
-.logo{
-width:100px;
-height:100px;
-margin:auto;
-border-radius:50%;
-
-background:
-linear-gradient(
-135deg,
-#a855f7,
-#ec4899
-);
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:42px;
-
-box-shadow:
-0 0 40px rgba(168,85,247,.35);
-
-margin-bottom:20px;
-}
-
-.header h1{
-font-size:40px;
-font-weight:800;
-
-background:
-linear-gradient(
-135deg,
-#9333ea,
-#ec4899
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-margin-bottom:12px;
-}
-
-.header p{
-color:#6b7280;
-line-height:1.8;
-font-size:15px;
-max-width:500px;
-margin:auto;
-}
-
-.form-body{
-padding:35px;
-}
-
-.notice{
-background:
-linear-gradient(
-135deg,
-#faf5ff,
-#fdf2f8
-);
-
-border-left:5px solid #c084fc;
-
-padding:18px;
-border-radius:18px;
-
-margin-bottom:25px;
-
-font-size:14px;
-line-height:1.7;
-color:#6b7280;
-}
-
-.form-group{
-margin-bottom:22px;
-}
-
-label{
-display:block;
-margin-bottom:8px;
-font-weight:600;
-color:#374151;
-}
-
-.required{
-color:#ec4899;
-}
-
-input[type=text],
-input[type=number]{
-
-width:100%;
-padding:15px 16px;
-
-border:2px solid #e9d5ff;
-
-border-radius:16px;
-
-font-size:15px;
-
-transition:.3s;
-}
-
-input:focus{
-outline:none;
-
-border-color:#c084fc;
-
-box-shadow:
-0 0 0 5px rgba(192,132,252,.15);
-}
-
-.upload-box{
-
-border:2px dashed #c084fc;
-
-background:#faf5ff;
-
-padding:35px;
-
-border-radius:20px;
-
-text-align:center;
-
-cursor:pointer;
-
-transition:.3s;
-}
-
-.upload-box:hover{
-background:#f3e8ff;
-}
-
-.upload-box p{
-color:#6b7280;
-font-size:14px;
-}
-
-.preview{
-display:none;
-margin-top:15px;
-text-align:center;
-}
-
-.preview img{
-
-width:140px;
-height:140px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-border:4px solid white;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.1);
-}
-
-.checkbox{
-
-display:flex;
-gap:12px;
-
-align-items:flex-start;
-
-font-size:14px;
-
-color:#4b5563;
-
-margin-top:10px;
-}
-
-.checkbox input{
-width:auto;
-margin-top:3px;
-}
-
-button{
-
-width:100%;
-
-padding:18px;
-
-border:none;
-
-border-radius:18px;
-
-font-size:16px;
-font-weight:700;
-
-cursor:pointer;
-
-background:
-linear-gradient(
-135deg,
-#a855f7,
-#ec4899
-);
-
-color:white;
-
-margin-top:25px;
-
-transition:.3s;
-
-box-shadow:
-0 15px 35px rgba(168,85,247,.25);
-}
-
-button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:
-0 20px 40px rgba(168,85,247,.35);
-}
-
-button:disabled{
-opacity:.7;
-cursor:not-allowed;
-}
-
-.success{
-display:none;
-padding:50px 30px;
-text-align:center;
-}
-
-.success-icon{
-font-size:60px;
-margin-bottom:15px;
-}
-
-.success h2{
-color:#9333ea;
-margin-bottom:10px;
-}
-
-.success p{
-color:#6b7280;
-line-height:1.7;
-}
-
-.footer{
-text-align:center;
-margin-top:20px;
-font-size:13px;
-color:#9ca3af;
-}
-
-@media(max-width:600px){
-
-.header{
-padding:40px 25px;
-}
-
-.header h1{
-font-size:32px;
-}
-
-.form-body{
-padding:25px;
-}
-
-}
-.music-toggle{
-position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-border:none;
-border-radius:50%;
-background:linear-gradient(135deg,#a855f7,#ec4899);
-color:white;
-font-size:24px;
-cursor:pointer;
-z-index:9999;
-box-shadow:0 10px 25px rgba(168,85,247,.35);
-transition:.3s;
-}
-
-.music-toggle:hover{
-transform:scale(1.08);
-}
-
-.volume-box{
-position:fixed;
-bottom:90px;
-right:20px;
-background:white;
-padding:10px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-z-index:9999;
-display:none;
-}
-
-.volume-box input{
-width:120px;
-}
+.profile-photo img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid white;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}  
+h1{color:#9333ea}
+p.desc{color:#6b7280;margin-top:10px;line-height:1.7}
+.form-group{margin-bottom:18px}
+label{display:block;font-weight:600;margin-bottom:8px}
+input,select,textarea{width:100%;padding:14px;border:2px solid #e9d5ff;border-radius:14px}
+textarea{resize:vertical}
+button{width:100%;padding:16px;border:none;border-radius:16px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;font-weight:700;cursor:pointer}
+.notice{background:#faf5ff;padding:15px;border-radius:15px;margin-bottom:20px}
+.success{display:none;text-align:center;padding:30px}
+.required{color:#ec4899}
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
 <div class="card">
-
 <div class="header">
+<div class="logo">💜</div>
 
-<div class="logo">🌸</div>
-
-<h1>Kisaragi</h1>
-
-<p>
-Teman mabar Mobile Legends yang cocok denganmu ✨<br>
-Teman yang ramah, aman, dan nyaman untuk menjadi partner bermain.
-</p>
-
+<div class="profile-photo">
+    <img
+        src="https://scontent.fpnh26-1.fna.fbcdn.net/v/t39.30808-6/451768145_26407747155505348_7690192099795800299_n.jpg"
+        alt="Foto Profil">
+  
 </div>
 
-<div class="form-body">
+<h1>Kisaragi Match</h1>
+<p class="desc">Temukan pasangan yang memiliki nilai hidup, tujuan, dan kepribadian yang sejalan denganmu.</p>
+</div>
 
 <div id="formSection">
+<div class="notice">Data hanya digunakan untuk proses pencocokan pasangan.</div>
 
-<div class="notice">
-💜 Data yang dikirim hanya dapat dilihat oleh admin. Foto wajah digunakan untuk proses verifikasi dan tidak ditampilkan kepada publik.
-</div>
-
-<form id="mabarForm">
+<form id="matchForm">
 
 <div class="form-group">
 <label>Nama Lengkap <span class="required">*</span></label>
-<input type="text" id="nama" required>
+<input type="text" required>
 </div>
 
 <div class="form-group">
 <label>Usia <span class="required">*</span></label>
-<input type="number" min="10" max="99" id="usia" required>
+<input type="number" required>
 </div>
 
 <div class="form-group">
 <label>Domisili <span class="required">*</span></label>
-<input type="text" id="domisili" required>
+<input type="text" required>
 </div>
 
 <div class="form-group">
-<label>Nickname Mobile Legends <span class="required">*</span></label>
-<input type="text" id="nickname" required>
+<label>Tinggi Badan</label>
+<input type="number">
 </div>
 
 <div class="form-group">
-<label>User ID Mobile Legends <span class="required">*</span></label>
-<input type="text" id="userid" required>
+<label>Pendidikan Terakhir</label>
+<select>
+<option>SMA/SMK</option>
+<option>D3</option>
+<option>S1</option>
+<option>S2</option>
+<option>S3</option>
+</select>
 </div>
 
 <div class="form-group">
-
-<label>Foto Wajah <span class="required">*</span></label>
-
-<div class="upload-box">
-
-<input
-type="file"
-id="photo"
-accept="image/*"
-required
-style="margin-bottom:10px;">
-
-<p>📸 Upload foto wajah terbaikmu</p>
-
+<label>Pekerjaan</label>
+<input type="text">
 </div>
 
-<div class="preview" id="preview">
-<img id="previewImage">
+<div class="form-group">
+<label>Tujuan Bergabung</label>
+<select>
+<option>Mencari pasangan serius</option>
+<option>Menuju pernikahan</option>
+<option>Mencari teman terlebih dahulu</option>
+</select>
 </div>
 
+<div class="form-group">
+<label>Hobi dan Minat</label>
+<input type="text">
 </div>
 
-<div class="checkbox">
-
-<input type="checkbox" id="agree" required>
-
-<label for="agree">
-Saya menyetujui pengiriman data dan foto untuk keperluan pencarian teman mabar Kisaragi.
-</label>
-
+<div class="form-group">
+<label>Ceritakan Tentang Dirimu</label>
+<textarea rows="4"></textarea>
 </div>
 
-<button id="submitBtn" type="submit">
-🚀 Kirim Data
-</button>
+<div class="form-group">
+<label>Love Language</label>
+<select>
+<option>Quality Time</option>
+<option>Words of Affirmation</option>
+<option>Acts of Service</option>
+<option>Receiving Gifts</option>
+<option>Physical Touch</option>
+</select>
+</div>
 
+<div class="form-group">
+<label>Apakah Merokok?</label>
+<select>
+<option>Tidak</option>
+<option>Ya</option>
+<option>Kadang-kadang</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Ingin Memiliki Anak?</label>
+<select>
+<option>Ya</option>
+<option>Tidak</option>
+<option>Belum Yakin</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Rentang Usia Pasangan yang Dicari</label>
+<input type="text" placeholder="Contoh: 24-30 tahun">
+</div>
+
+<div class="form-group">
+<label>Domisili Pasangan yang Diinginkan</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Foto Profil</label>
+<input type="file">
+</div>
+
+<button type="submit">💜 Kirim Profil</button>
 </form>
-
 </div>
 
 <div class="success" id="successSection">
-
-<div class="success-icon">🎉</div>
-
-<h2>Data Berhasil Dikirim</h2>
-
-<p>
-Terima kasih telah bergabung dengan Kisaragi.<br>
-Data Anda telah diterima oleh admin.
-</p>
-
+<h2>Profil Berhasil Dikirim</h2>
+<p>Terima kasih telah bergabung dengan Kisaragi Match.</p>
 </div>
 
 </div>
-
-</div>
-
-<div class="footer">
-© 2026 Kisaragi Community
-</div>
-
 </div>
 
 <script>
-
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
-
-const photoInput = document.getElementById("photo");
-
-photoInput.addEventListener("change", function(){
-
-const file = this.files[0];
-
-if(!file) return;
-
-const reader = new FileReader();
-
-reader.onload = function(e){
-
-document.getElementById("previewImage").src = e.target.result;
-
-document.getElementById("preview").style.display = "block";
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
-document
-.getElementById("mabarForm")
-.addEventListener("submit", async function(e){
-
+document.getElementById('matchForm').addEventListener('submit',function(e){
 e.preventDefault();
-
-const btn = document.getElementById("submitBtn");
-
-btn.disabled = true;
-btn.innerText = "⏳ Mengirim...";
-
-const file =
-document.getElementById("photo").files[0];
-
-const reader = new FileReader();
-
-reader.onload = async function(){
-
-const base64 =
-reader.result.split(",")[1];
-
-const payload = {
-
-nama:
-document.getElementById("nama").value,
-
-usia:
-document.getElementById("usia").value,
-
-domisili:
-document.getElementById("domisili").value,
-
-nickname:
-document.getElementById("nickname").value,
-
-userid:
-document.getElementById("userid").value,
-
-photo:
-base64,
-
-fileName:
-file.name,
-
-mimeType:
-file.type
-
-};
-
-try{
-
-await fetch(
-WEBAPP_URL,
-{
-method:"POST",
-body:JSON.stringify(payload)
-}
-);
-
-document.getElementById("formSection")
-.style.display="none";
-
-document.getElementById("successSection")
-.style.display="block";
-
-}catch(err){
-
-alert("Terjadi kesalahan saat mengirim data.");
-
-btn.disabled = false;
-btn.innerText = "🚀 Kirim Data";
-
-}
-
-};
-
-reader.readAsDataURL(file);
-
+document.getElementById('formSection').style.display='none';
+document.getElementById('successSection').style.display='block';
 });
-
-</script>
-<!-- YouTube Background Music -->
-<div id="yt-player"></div>
-
-<button id="musicBtn" class="music-toggle">
-🔇
-</button>
-
-<div class="volume-box" id="volumeBox">
-<input
-type="range"
-id="volumeSlider"
-min="0"
-max="100"
-value="15">
-</div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script>
-
-let player;
-let musicPlaying = false;
-
-function onYouTubeIframeAPIReady(){
-
-player = new YT.Player('yt-player',{
-
-height:'0',
-width:'0',
-
-videoId:'xizN47Box_Y',
-
-playerVars:{
-autoplay:0,
-controls:0,
-disablekb:1,
-fs:0,
-modestbranding:1,
-rel:0,
-loop:1,
-playlist:'xizN47Box_Y'
-},
-
-events:{
-onReady:function(event){
-
-event.target.setVolume(15);
-
-}
-}
-
-});
-
-}
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-const volumeBox =
-document.getElementById("volumeBox");
-
-const volumeSlider =
-document.getElementById("volumeSlider");
-
-musicBtn.addEventListener("click",function(){
-
-if(!player) return;
-
-if(!musicPlaying){
-
-player.playVideo();
-
-musicBtn.innerHTML="🎵";
-
-musicPlaying=true;
-
-}else{
-
-player.pauseVideo();
-
-musicBtn.innerHTML="🔇";
-
-musicPlaying=false;
-
-}
-
-});
-
-musicBtn.addEventListener("contextmenu",function(e){
-
-e.preventDefault();
-
-volumeBox.style.display=
-volumeBox.style.display==="block"
-? "none"
-: "block";
-
-});
-
-volumeSlider.addEventListener("input",function(){
-
-if(player){
-
-player.setVolume(this.value);
-
-}
-
-});
-
-document.addEventListener("click",function(e){
-
-if(
-!volumeBox.contains(e.target)
-&& e.target!==musicBtn
-){
-volumeBox.style.display="none";
-}
-
-});
-
 </script>
 </body>
 </html>
