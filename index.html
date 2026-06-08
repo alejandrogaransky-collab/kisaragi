@@ -162,11 +162,63 @@ button{width:100%;padding:16px;border:none;border-radius:16px;background:linear-
 </div>
 
 <script>
-document.getElementById('matchForm').addEventListener('submit',function(e){
-e.preventDefault();
-document.getElementById('formSection').style.display='none';
-document.getElementById('successSection').style.display='block';
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
+
+document
+.getElementById("matchForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const data = {
+        nama: document.getElementById("nama").value,
+        usia: document.getElementById("usia").value,
+        domisili: document.getElementById("domisili").value,
+        tinggiBadan: document.getElementById("tinggiBadan").value,
+        pendidikan: document.getElementById("pendidikan").value,
+        pekerjaan: document.getElementById("pekerjaan").value,
+        tujuan: document.getElementById("tujuan").value,
+        hobi: document.getElementById("hobi").value,
+        tentangDiri: document.getElementById("tentangDiri").value,
+        loveLanguage: document.getElementById("loveLanguage").value,
+        merokok: document.getElementById("merokok").value,
+        inginAnak: document.getElementById("inginAnak").value
+    };
+
+    try {
+
+        const response = await fetch(SCRIPT_URL,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+
+            document.getElementById("formSection").style.display="none";
+            document.getElementById("successSection").style.display="block";
+
+        }else{
+
+            alert("Gagal mengirim data");
+
+        }
+
+    } catch(error){
+
+        console.error(error);
+        alert("Terjadi kesalahan saat mengirim data");
+
+    }
+
 });
+
 </script>
 </body>
 </html>
