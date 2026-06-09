@@ -91,14 +91,22 @@ document.getElementById("matchForm").addEventListener("submit",async(e)=>{
    photoType=foto.type;
   }
 
-  const data={
-   nama:nama.value,usia:usia.value,domisili:domisili.value,
-   tinggiBadan:tinggiBadan.value,pendidikan:pendidikan.value,
-   pekerjaan:pekerjaan.value,tujuan:tujuan.value,hobi:hobi.value,
-   tentangDiri:tentangDiri.value,loveLanguage:loveLanguage.value,
-   merokok:merokok.value,inginAnak:inginAnak.value,
-   photoBase64,photoType
-  };
+ const data={
+   nama:document.getElementById("nama").value,
+   usia:document.getElementById("usia").value,
+   domisili:document.getElementById("domisili").value,
+   tinggiBadan:document.getElementById("tinggiBadan").value,
+   pendidikan:document.getElementById("pendidikan").value,
+   pekerjaan:document.getElementById("pekerjaan").value,
+   tujuan:document.getElementById("tujuan").value,
+   hobi:document.getElementById("hobi").value,
+   tentangDiri:document.getElementById("tentangDiri").value,
+   loveLanguage:document.getElementById("loveLanguage").value,
+   merokok:document.getElementById("merokok").value,
+   inginAnak:document.getElementById("inginAnak").value,
+   photoBase64,
+   photoType
+};
 
   const res=await fetch(SCRIPT_URL,{
    method:"POST",
