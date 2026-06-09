@@ -10,31 +10,19 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:linear-gradient(135deg,#ffe7f7,#f3e8ff,#dbeafe);padding:30px}
 .container{max-width:900px;margin:auto}
-.card{background:rgba(255,255,255,.85);border-radius:30px;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.card{background:rgba(255,255,255,.9);border-radius:30px;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
 .header{text-align:center;margin-bottom:30px}
 .logo{font-size:60px;margin-bottom:15px}
-.profile-photo{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.profile-photo img{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid white;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-}  
+.profile-photo{text-align:center;margin-bottom:20px}
+.profile-photo img{width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid white;box-shadow:0 10px 25px rgba(0,0,0,.15)}
 h1{color:#9333ea}
-p.desc{color:#6b7280;margin-top:10px;line-height:1.7}
+.desc{color:#6b7280;margin-top:10px;line-height:1.7}
+.notice{background:#faf5ff;padding:15px;border-radius:15px;margin-bottom:25px}
 .form-group{margin-bottom:18px}
 label{display:block;font-weight:600;margin-bottom:8px}
 input,select,textarea{width:100%;padding:14px;border:2px solid #e9d5ff;border-radius:14px}
-textarea{resize:vertical}
 button{width:100%;padding:16px;border:none;border-radius:16px;background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;font-weight:700;cursor:pointer}
-.notice{background:#faf5ff;padding:15px;border-radius:15px;margin-bottom:20px}
-.success{display:none;text-align:center;padding:30px}
+.success{display:none;text-align:center;padding:40px}
 .required{color:#ec4899}
 </style>
 </head>
@@ -43,182 +31,97 @@ button{width:100%;padding:16px;border:none;border-radius:16px;background:linear-
 <div class="card">
 <div class="header">
 <div class="logo">💜</div>
-
 <div class="profile-photo">
-    <img
-        src="https://scontent.fpnh26-1.fna.fbcdn.net/v/t39.30808-6/451768145_26407747155505348_7690192099795800299_n.jpg?stp=dst-jpg_tt6&cstp=mx720x958&ctp=s720x958&_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEDTUd3I4eMg8fCLfLpidzun2bKwlxhh9ufZsrCXGGH269Nci0L-nFU-tS3G0IWHptChDLHMeFWoK1coPeKqKKW&_nc_ohc=GDZo8caZ2KEQ7kNvwGcIyhH&_nc_oc=Adque7M7r4iZBwKc0-CVeMGZ7wjYtAuUKq_o78HrfPSpITPsECm9lOIIg93pN9_HORY&_nc_zt=23&_nc_ht=scontent.fpnh26-1.fna&_nc_gid=FwOFrYjW69ShCjnj4G0r-A&_nc_ss=7b2a8&oh=00_Af8W7mf_nlLJCI-q3d_-PPQV4mIEYCs9DCOGMtwYTwr0Bw&oe=6A2C586A"
-        alt="Foto Profil">
-  
+<img src="https://via.placeholder.com/180" alt="Foto Profil">
 </div>
-
-<h1>Balbale </h1>
+<h1>Balbale</h1>
 <p class="desc">Calon pasangan yang memiliki nilai hidup, tujuan, dan kepribadian yang sejalan denganmu.</p>
 </div>
 
 <div id="formSection">
-<div class="notice">Data hanya digunakan untuk proses pencocokan pasangan. Data dijamin aman dan tidak akan tersebar</div>
+<div class="notice">Data hanya digunakan untuk proses pencocokan pasangan.</div>
 
 <form id="matchForm">
-
-<div class="form-group">
-<label>Nama Lengkap <span class="required">*</span></label>
-<input type="text" required>
-</div>
-
-<div class="form-group">
-<label>Usia <span class="required">*</span></label>
-<input type="number" required>
-</div>
-
-<div class="form-group">
-<label>Domisili <span class="required">*</span></label>
-<input type="text" required>
-</div>
-
-<div class="form-group">
-<label>Tinggi Badan</label>
-<input type="number">
-</div>
-
-<div class="form-group">
-<label>Pendidikan Terakhir</label>
-<select>
-<option>SMA/SMK</option>
-<option>D3</option>
-<option>S1</option>
-<option>S2</option>
-<option>S3</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Pekerjaan</label>
-<input type="text">
-</div>
-
-<div class="form-group">
-<label>Tujuan Mendaftar</label>
-<select>
-<option>Mencari pasangan serius</option>
-<option>Menuju pernikahan</option>
-<option>Mencari teman terlebih dahulu</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Hobi dan Minat</label>
-<input type="text">
-</div>
-
-<div class="form-group">
-<label>Ceritakan Tentang Dirimu</label>
-<textarea rows="4"></textarea>
-</div>
-
-<div class="form-group">
-<label>Love Language</label>
-<select>
-<option>Quality Time</option>
-<option>Words of Affirmation</option>
-<option>Acts of Service</option>
-<option>Receiving Gifts</option>
-<option>Physical Touch</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Apakah Merokok?</label>
-<select>
-<option>Tidak</option>
-<option>Ya</option>
-<option>Kadang-kadang</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Ingin Memiliki Anak?</label>
-<select>
-<option>Ya</option>
-<option>Tidak</option>
-<option>Belum Yakin</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Foto Profil</label>
-<input type="file">
-</div>
-
-<button type="submit">💜 Kirim Profil</button>
+<div class="form-group"><label>Nama Lengkap *</label><input type="text" id="nama" required></div>
+<div class="form-group"><label>Usia *</label><input type="number" id="usia" required></div>
+<div class="form-group"><label>Domisili *</label><input type="text" id="domisili" required></div>
+<div class="form-group"><label>Tinggi Badan</label><input type="number" id="tinggiBadan"></div>
+<div class="form-group"><label>Pendidikan</label><select id="pendidikan"><option>SMA/SMK</option><option>D3</option><option>S1</option><option>S2</option><option>S3</option></select></div>
+<div class="form-group"><label>Pekerjaan</label><input type="text" id="pekerjaan"></div>
+<div class="form-group"><label>Tujuan</label><select id="tujuan"><option>Mencari pasangan serius</option><option>Menuju pernikahan</option><option>Mencari teman terlebih dahulu</option></select></div>
+<div class="form-group"><label>Hobi</label><input type="text" id="hobi"></div>
+<div class="form-group"><label>Tentang Diri</label><textarea id="tentangDiri"></textarea></div>
+<div class="form-group"><label>Love Language</label><select id="loveLanguage"><option>Quality Time</option><option>Words of Affirmation</option><option>Acts of Service</option><option>Receiving Gifts</option><option>Physical Touch</option></select></div>
+<div class="form-group"><label>Merokok</label><select id="merokok"><option>Tidak</option><option>Ya</option><option>Kadang-kadang</option></select></div>
+<div class="form-group"><label>Ingin Anak</label><select id="inginAnak"><option>Ya</option><option>Tidak</option><option>Belum Yakin</option></select></div>
+<div class="form-group"><label>Foto Profil</label><input type="file" id="foto" accept="image/*"></div>
+<button type="submit" id="submitBtn">💜 Kirim Profil</button>
 </form>
 </div>
 
 <div class="success" id="successSection">
 <h2>Profil Berhasil Dikirim</h2>
-<p>Terima kasih telah bergabung dengan Kisaragi Match.</p>
+<p>Terima kasih telah bergabung dengan Balbale.</p>
 </div>
-
 </div>
 </div>
 
 <script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbx82fi7oojE1U_nnBfQHVDluhzlaxjrMXrcoydEFpCddZPF790LTeYbMuXDe4D-ImM/exec";
 
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzgUrKNvbwqjuQytSMVVQ1Gc7NaxDOmSxkRYAQId9En70jNAycgjo-I1ayQa84DXxJy/exec";
+function fileToBase64(file){
+ return new Promise((resolve,reject)=>{
+  const reader=new FileReader();
+  reader.onload=()=>resolve(reader.result);
+  reader.onerror=reject;
+  reader.readAsDataURL(file);
+ });
+}
 
-document
-.getElementById("matchForm")
-.addEventListener("submit", async function(e){
+document.getElementById("matchForm").addEventListener("submit",async(e)=>{
+ e.preventDefault();
+ const btn=document.getElementById("submitBtn");
+ btn.disabled=true;
+ btn.innerText="Mengirim...";
 
-    e.preventDefault();
+ try{
+  const foto=document.getElementById("foto").files[0];
+  let photoBase64="",photoType="";
 
-    const data = {
-        nama: document.getElementById("nama").value,
-        usia: document.getElementById("usia").value,
-        domisili: document.getElementById("domisili").value,
-        tinggiBadan: document.getElementById("tinggiBadan").value,
-        pendidikan: document.getElementById("pendidikan").value,
-        pekerjaan: document.getElementById("pekerjaan").value,
-        tujuan: document.getElementById("tujuan").value,
-        hobi: document.getElementById("hobi").value,
-        tentangDiri: document.getElementById("tentangDiri").value,
-        loveLanguage: document.getElementById("loveLanguage").value,
-        merokok: document.getElementById("merokok").value,
-        inginAnak: document.getElementById("inginAnak").value
-    };
+  if(foto){
+   photoBase64=await fileToBase64(foto);
+   photoType=foto.type;
+  }
 
-    try {
+  const data={
+   nama:nama.value,usia:usia.value,domisili:domisili.value,
+   tinggiBadan:tinggiBadan.value,pendidikan:pendidikan.value,
+   pekerjaan:pekerjaan.value,tujuan:tujuan.value,hobi:hobi.value,
+   tentangDiri:tentangDiri.value,loveLanguage:loveLanguage.value,
+   merokok:merokok.value,inginAnak:inginAnak.value,
+   photoBase64,photoType
+  };
 
-        const response = await fetch(SCRIPT_URL,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(data)
-        });
+  const res=await fetch(SCRIPT_URL,{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify(data)
+  });
 
-        const result = await response.json();
+  const result=await res.json();
 
-        if(result.success){
-
-            document.getElementById("formSection").style.display="none";
-            document.getElementById("successSection").style.display="block";
-
-        }else{
-
-            alert("Gagal mengirim data");
-
-        }
-
-    } catch(error){
-
-        console.error(error);
-        alert("Terjadi kesalahan saat mengirim data");
-
-    }
-
+  if(result.success){
+   formSection.style.display="none";
+   successSection.style.display="block";
+  }else{
+   alert(result.error||"Gagal mengirim data");
+  }
+ }catch(err){
+  alert("Terjadi kesalahan: "+err);
+ }
+ btn.disabled=false;
+ btn.innerText="💜 Kirim Profil";
 });
-
 </script>
 </body>
 </html>
